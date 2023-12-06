@@ -28,12 +28,12 @@ const postEnvio = async(req, res) => {
 }
 
 const putEnvio = async(req, res) => {
-    const {_id, registro_envio, nombre, apellido, email, telefono, direccion, ciudad, postal, pais, departamento } = req.body //Desesctructurar
+    const {_id, registro_envio, nombre, apellido, email, telefono, direccion, ciudad, postal, pais, departamento, precio_dolar} = req.body //Desesctructurar
     console.log(req.body)
     let mensaje = ''
     try {
         const envio = await Envio.findOneAndUpdate({_id: _id},
-        {registro_envio: registro_envio, nombre: nombre, apellido:apellido, email:email, telefono:telefono, direccion: direccion, ciudad: ciudad, postal:postal, pais: pais, departamento: departamento})
+        {registro_envio: registro_envio, nombre: nombre, apellido:apellido, email:email, telefono:telefono, direccion: direccion, ciudad: ciudad, postal:postal, pais: pais, departamento: departamento, precio_dolar: precio_dolar})
         mensaje = 'Actualización exitosa'
     } catch (error) {
         mensaje = error

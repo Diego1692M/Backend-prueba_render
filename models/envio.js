@@ -58,7 +58,11 @@ const EnvioSchema = ({
         type: String,
         required:[true, 'El departamento es requirido']
     },
-})
 
+    precio_dolar:{
+        type: Number,
+        required: true
+    },
+})
 
 module.exports = model('Envio', EnvioSchema)
